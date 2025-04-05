@@ -45,7 +45,7 @@ def split_nodes_image(old_nodes):                                               
         original_text = old_node.text                                           # Extract the original text of the current node
         images = extract_markdown_images(original_text)                         # Find all markdown images in the text
         if len(images) == 0:                                                    # If no images are found,
-            new_nodes.append(old_node)``                                        #   add the old_node unchanged
+            new_nodes.append(old_node)                                          #   add the old_node unchanged
             continue
         for image in images:                                                    # For each detected image, split the text into sections and create new modifiers,
             sections = original_text.split(f"![{image[0]}]({image[1]})", 1)     #   split the original text around the current image Markdown syntax
